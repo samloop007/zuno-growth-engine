@@ -1,25 +1,30 @@
-import { Target, BookOpen, TrendingUp } from "lucide-react";
+import zunoUncle from "@/assets/zuno-uncle.png";
+import bajiZuno from "@/assets/baji-zuno.jpg";
+import bhaiZuno from "@/assets/bhai-zuno.png";
 
 const pillars = [
   {
-    icon: Target,
-    title: "Strategy",
+    image: zunoUncle,
+    title: "Investments",
+    subtitle: "by Zuno Uncle",
     description:
-      "Data-backed decisions, investment intelligence, and growth planning that gives you clarity and direction.",
+      "Data-backed decisions, investment intelligence, and growth planning that gives you clarity and direction for sustainable growth.",
     accent: "01",
   },
   {
-    icon: BookOpen,
-    title: "Story",
+    image: bajiZuno,
+    title: "Strategy",
+    subtitle: "by Baji Zuno",
     description:
-      "Brand positioning, messaging, and narrative clarity that resonates with your audience and builds trust.",
+      "Brand positioning, messaging, and narrative clarity that resonates with your audience and builds lasting trust.",
     accent: "02",
   },
   {
-    icon: TrendingUp,
-    title: "Sale",
+    image: bhaiZuno,
+    title: "Automation",
+    subtitle: "by Bhai Zuno",
     description:
-      "Automation systems that convert and scale, turning your operations into a growth engine.",
+      "Automation systems that convert and scale, turning your operations into a high-performing growth engine.",
     accent: "03",
   },
 ];
@@ -40,29 +45,38 @@ const Pillars = () => {
           </div>
 
           {/* Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {pillars.map((pillar, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            {pillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className="group relative bg-background p-8 lg:p-10 border border-border hover:border-accent/30 transition-all duration-500 hover-lift"
+                className="group relative bg-background border border-border hover:border-accent/30 transition-all duration-500 hover-lift overflow-hidden"
               >
-                {/* Number accent */}
-                <span className="absolute top-6 right-6 text-6xl font-semibold text-muted/50 select-none">
-                  {pillar.accent}
-                </span>
-
-                {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center bg-accent/10 text-accent mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
-                  <pillar.icon className="h-6 w-6" />
+                {/* Image */}
+                <div className="aspect-square overflow-hidden bg-secondary/50">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">
-                  {pillar.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {pillar.description}
-                </p>
+                <div className="p-6 lg:p-8">
+                  {/* Number accent */}
+                  <span className="absolute top-4 right-4 text-5xl font-semibold text-muted/30 select-none">
+                    {pillar.accent}
+                  </span>
+
+                  <h3 className="text-2xl font-semibold mb-1 text-foreground">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-accent font-medium mb-4">
+                    {pillar.subtitle}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
