@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,35 +13,36 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-2xl font-semibold tracking-tight">
+                <span className="text-3xl font-bold tracking-tight">
                   ZUNO
                 </span>
-                <span className="text-sm opacity-60 font-light">by Perch</span>
+                <span className="text-sm opacity-60 font-medium">by Perch</span>
               </div>
-              <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-8">
+              <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-8 text-lg">
                 A strategy-driven marketing and automation agency helping brands
                 make smarter decisions, tell better stories, and grow with
                 confidence.
               </p>
               <a
                 href="mailto:hello@zunobyperch.com"
-                className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors group"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-primary-foreground/10 hover:bg-accent/20 hover:text-accent transition-all duration-300 group"
               >
-                hello@zunobyperch.com
+                <Mail className="h-5 w-5" />
+                <span className="font-medium">hello@zunobyperch.com</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
 
             {/* Navigation */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 opacity-60">
+              <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 text-accent">
                 Navigation
               </h4>
               <ul className="space-y-4">
                 <li>
                   <Link
                     to="/"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
                   >
                     Home
                   </Link>
@@ -49,7 +50,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/services"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
                   >
                     Services
                   </Link>
@@ -57,7 +58,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/about"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
                   >
                     About
                   </Link>
@@ -65,31 +66,27 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Connect */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 opacity-60">
+              <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 text-accent">
                 Connect
               </h4>
-              <ul className="space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors inline-flex items-center gap-1"
-                  >
-                    LinkedIn
-                    <ArrowUpRight className="h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors inline-flex items-center gap-1"
-                  >
-                    Twitter
-                    <ArrowUpRight className="h-3 w-3" />
-                  </a>
-                </li>
-              </ul>
+              <div className="flex gap-3">
+                <a
+                  href="#"
+                  className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -98,7 +95,7 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/50">
               © {currentYear} ZUNO by Perch. All rights reserved.
             </p>
-            <p className="text-sm text-primary-foreground/50">
+            <p className="text-sm text-primary-foreground/50 font-medium">
               Strategy. Story. Sale.
             </p>
           </div>
