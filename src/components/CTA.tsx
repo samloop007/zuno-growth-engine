@@ -14,37 +14,56 @@ const CTA = ({
   buttonText = "Start with Strategy",
   variant = "light",
 }: CTAProps) => {
-  const isDark = variant === "dark";
+  const isLight = variant === "light";
 
   return (
     <section
-      className={`section-spacing ${
-        isDark ? "bg-primary text-primary-foreground" : "bg-secondary/50"
+      className={`py-24 md:py-32 relative overflow-hidden ${
+        isLight ? "bg-background" : "bg-foreground"
       }`}
     >
-      <div className="section-padding">
+      {/* Background decoration */}
+      <div className={`absolute inset-0 ${
+        isLight 
+          ? "bg-gradient-to-br from-secondary/50 via-background to-accent/5" 
+          : "bg-gradient-to-br from-charcoal via-charcoal-light/10 to-charcoal"
+      }`} />
+      
+      {/* Top border */}
+      <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent ${
+        isLight ? "via-border" : "via-background/20"
+      } to-transparent`} />
+
+      <div className="section-padding relative z-10">
         <div className="container-narrow text-center">
-          <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 ${
-              isDark ? "text-primary-foreground" : "text-foreground"
-            }`}
-          >
-            {headline}
-          </h2>
-          <p
-            className={`text-lg max-w-xl mx-auto mb-10 ${
-              isDark ? "text-primary-foreground/70" : "text-muted-foreground"
-            }`}
-          >
-            {description}
-          </p>
-          <Button
-            variant={isDark ? "accent" : "hero"}
-            className="group"
-          >
-            {buttonText}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <div className="space-y-8">
+            <h2
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${
+                isLight ? "text-foreground" : "text-background"
+              }`}
+            >
+              {headline}
+            </h2>
+            
+            <p
+              className={`text-lg max-w-xl mx-auto leading-relaxed ${
+                isLight ? "text-muted-foreground" : "text-background/70"
+              }`}
+            >
+              {description}
+            </p>
+
+            <Button
+              variant={isLight ? "hero" : "heroOutline"}
+              size="lg"
+              className={`group text-base px-8 py-6 ${
+                !isLight && "border-background text-background hover:bg-background hover:text-foreground"
+              }`}
+            >
+              {buttonText}
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
