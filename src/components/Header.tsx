@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { ModeToggle } from "./mode-toggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,11 +27,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border py-3"
           : "bg-transparent py-5"
-      }`}
+        }`}
     >
       <div className="section-padding">
         <nav className="container-wide flex items-center justify-between">
@@ -50,11 +50,10 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors duration-300 relative ${
-                  isActive(link.path)
+                className={`text-sm font-medium transition-colors duration-300 relative ${isActive(link.path)
                     ? "text-accent"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {link.name}
                 {isActive(link.path) && (
@@ -64,9 +63,10 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button 
+          {/* CTA Button and Theme Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            <ModeToggle />
+            <Button
               className="group bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6"
             >
               Book a Call
@@ -97,21 +97,23 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg font-medium py-3 px-4 rounded-xl transition-colors ${
-                    isActive(link.path)
+                  className={`text-lg font-medium py-3 px-4 rounded-xl transition-colors ${isActive(link.path)
                       ? "text-accent bg-accent/10"
                       : "text-muted-foreground hover:bg-secondary"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button 
+              <Button
                 className="mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full py-6"
               >
                 Book a Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+              <div className="mt-4 flex justify-center">
+                <ModeToggle />
+              </div>
             </div>
           </div>
         )}
