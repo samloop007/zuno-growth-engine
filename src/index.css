@@ -2,108 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ZUNO by Perch - Premium Agency Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* ZUNO by Perch - Bold Modern Design System */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 
 @layer base {
   :root {
-    /* Core palette - warm off-white & deep charcoal */
-    --background: 48 20% 98%;
-    --foreground: 0 0% 10%;
+    /* Core palette - Crisp white & deep navy */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 48 20% 98%;
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 48 20% 98%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Primary - Deep charcoal */
-    --primary: 0 0% 10%;
-    --primary-foreground: 48 20% 98%;
+    /* Primary - Deep navy/slate */
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Subtle warm gray */
-    --secondary: 40 10% 94%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary - Cool gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    /* Muted - Warm gray for subtle elements */
-    --muted: 40 10% 92%;
-    --muted-foreground: 0 0% 45%;
+    /* Muted - Soft gray */
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
 
-    /* Accent - Refined amber/gold */
-    --accent: 43 72% 47%;
+    /* Accent - Electric coral/orange */
+    --accent: 16 100% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 43 72% 47%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 16 100% 60%;
 
-    --radius: 0.25rem;
+    --radius: 0.75rem;
 
     /* Custom tokens */
-    --surface-elevated: 48 20% 100%;
-    --text-primary: 0 0% 10%;
-    --text-secondary: 0 0% 40%;
-    --text-tertiary: 0 0% 55%;
-    --gold: 43 72% 47%;
-    --gold-light: 43 72% 92%;
-    --charcoal: 0 0% 10%;
-    --charcoal-light: 0 0% 20%;
+    --surface-elevated: 0 0% 100%;
+    --text-primary: 222 47% 11%;
+    --text-secondary: 220 9% 46%;
+    --text-tertiary: 220 9% 60%;
+    --coral: 16 100% 60%;
+    --coral-light: 16 100% 95%;
+    --navy: 222 47% 11%;
+    --navy-light: 222 47% 20%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-foreground: 222 47% 20%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 16 100% 60%;
   }
 
   .dark {
-    --background: 0 0% 6%;
-    --foreground: 48 20% 95%;
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 48 20% 95%;
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 48 20% 95%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 48 20% 95%;
-    --primary-foreground: 0 0% 6%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 222 47% 6%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 48 20% 95%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 220 9% 60%;
 
-    --accent: 43 72% 50%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 16 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 43 72% 50%;
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 16 100% 60%;
 
-    --surface-elevated: 0 0% 10%;
-    --text-primary: 48 20% 95%;
-    --text-secondary: 0 0% 65%;
-    --text-tertiary: 0 0% 50%;
+    --surface-elevated: 222 47% 10%;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 220 9% 70%;
+    --text-tertiary: 220 9% 55%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 16 100% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 16 100% 60%;
   }
 }
 
@@ -114,30 +114,31 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
-    @apply font-semibold tracking-tight;
+    font-family: 'Syne', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
   }
 
   .display-font {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Syne', sans-serif;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply px-6 md:px-12 lg:px-20 xl:px-32;
+    @apply px-5 md:px-10 lg:px-16 xl:px-24;
   }
 
   .section-spacing {
-    @apply py-20 md:py-28 lg:py-36;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   .container-narrow {
-    @apply max-w-5xl mx-auto;
+    @apply max-w-4xl mx-auto;
   }
 
   .container-wide {
@@ -149,21 +150,29 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent to-foreground;
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl;
   }
 
   .link-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 60px -15px hsl(var(--accent) / 0.4);
   }
 }
 
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-fade-in {
@@ -171,13 +180,17 @@
   }
 
   .animate-slide-in {
-    animation: slideIn 0.5s ease-out forwards;
+    animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
@@ -197,7 +210,7 @@
   @keyframes slideIn {
     from {
       opacity: 0;
-      transform: translateX(-20px);
+      transform: translateX(-30px);
     }
     to {
       opacity: 1;
@@ -205,9 +218,20 @@
     }
   }
 
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.1s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.2s; }
+  .stagger-5 { animation-delay: 0.25s; }
 }

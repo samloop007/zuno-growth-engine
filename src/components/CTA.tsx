@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 interface CTAProps {
   headline?: string;
@@ -9,61 +9,64 @@ interface CTAProps {
 }
 
 const CTA = ({
-  headline = "Grow with confidence.",
-  description = "Ready to transform how you market, sell, and scale? Let's start with strategy.",
-  buttonText = "Start with Strategy",
-  variant = "light",
+  headline = "Ready to scale your growth?",
+  description = "Book a strategy call with our team and discover how ZUNO can transform your marketing.",
+  buttonText = "Book a Strategy Call",
+  variant = "dark",
 }: CTAProps) => {
-  const isLight = variant === "light";
+  const isDark = variant === "dark";
 
   return (
     <section
-      className={`py-24 md:py-32 relative overflow-hidden ${
-        isLight ? "bg-background" : "bg-foreground"
+      className={`section-spacing relative overflow-hidden ${
+        isDark ? "bg-primary text-primary-foreground" : "bg-accent/5"
       }`}
     >
       {/* Background decoration */}
-      <div className={`absolute inset-0 ${
-        isLight 
-          ? "bg-gradient-to-br from-secondary/50 via-background to-accent/5" 
-          : "bg-gradient-to-br from-charcoal via-charcoal-light/10 to-charcoal"
+      <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl ${
+        isDark ? "bg-accent/20" : "bg-accent/10"
+      }`} />
+      <div className={`absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl ${
+        isDark ? "bg-accent/10" : "bg-primary/5"
       }`} />
       
-      {/* Top border */}
-      <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent ${
-        isLight ? "via-border" : "via-background/20"
-      } to-transparent`} />
-
       <div className="section-padding relative z-10">
         <div className="container-narrow text-center">
-          <div className="space-y-8">
-            <h2
-              className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${
-                isLight ? "text-foreground" : "text-background"
-              }`}
-            >
-              {headline}
-            </h2>
-            
-            <p
-              className={`text-lg max-w-xl mx-auto leading-relaxed ${
-                isLight ? "text-muted-foreground" : "text-background/70"
-              }`}
-            >
-              {description}
-            </p>
-
-            <Button
-              variant={isLight ? "hero" : "heroOutline"}
-              size="lg"
-              className={`group text-base px-8 py-6 ${
-                !isLight && "border-background text-background hover:bg-background hover:text-foreground"
-              }`}
-            >
-              {buttonText}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+          {/* Icon */}
+          <div className={`w-16 h-16 rounded-2xl mx-auto mb-8 flex items-center justify-center ${
+            isDark ? "bg-accent/20" : "bg-accent/10"
+          }`}>
+            <Mail className="w-8 h-8 text-accent" />
           </div>
+
+          {/* Content */}
+          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 ${
+            isDark ? "text-primary-foreground" : "text-foreground"
+          }`}>
+            {headline}
+          </h2>
+          
+          <p className={`text-lg max-w-xl mx-auto mb-10 ${
+            isDark ? "text-primary-foreground/70" : "text-muted-foreground"
+          }`}>
+            {description}
+          </p>
+
+          {/* CTA Button */}
+          <Button
+            size="lg"
+            className="group text-base px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
+          >
+            {buttonText}
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Button>
+
+          {/* Trust badge */}
+          <p className={`mt-8 text-sm ${
+            isDark ? "text-primary-foreground/50" : "text-muted-foreground"
+          }`}>
+            No commitment required • Free 30-minute consultation
+          </p>
         </div>
       </div>
     </section>

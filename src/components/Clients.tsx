@@ -1,57 +1,68 @@
-const clientTypes = [
-  { number: "01", label: "Startups" },
-  { number: "02", label: "SMEs" },
-  { number: "03", label: "Hospitality Brands" },
-  { number: "04", label: "Tourism Companies" },
-  { number: "05", label: "Real Estate Firms" },
-  { number: "06", label: "E-commerce Businesses" },
+import { Star } from "lucide-react";
+
+const clients = [
+  { name: "TechFlow", industry: "SaaS" },
+  { name: "GreenLeaf", industry: "E-Commerce" },
+  { name: "CloudBase", industry: "Tech" },
+  { name: "FinanceHub", industry: "Fintech" },
+  { name: "MediaPro", industry: "Media" },
+  { name: "DataSync", industry: "Analytics" },
 ];
 
 const Clients = () => {
   return (
-    <section className="section-spacing bg-background relative">
-      {/* Top border accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+    <section className="section-spacing bg-primary text-primary-foreground relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-foreground/10 to-transparent" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <div className="section-padding">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            {/* Left - Content */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-px bg-accent" />
-                  <span className="text-xs font-semibold tracking-[0.25em] uppercase text-accent">
-                    Who We Work With
-                  </span>
-                </div>
-                
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                  Partners in growth across industries
-                </h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  We partner with ambitious businesses ready to scale with intention. From early-stage startups to established enterprises, we build growth systems tailored to your unique challenges.
-                </p>
-              </div>
-            </div>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
+              Trusted Partners
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+              Brands we've helped
+              <span className="text-accent"> grow</span>
+            </h2>
+            <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto">
+              From ambitious startups to established enterprises, we partner with brands ready to scale.
+            </p>
+          </div>
 
-            {/* Right - Client Types Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {clientTypes.map((client, index) => (
-                <div
-                  key={client.label}
-                  className="group p-6 border border-border rounded-lg bg-card hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <span className="text-xs font-medium text-accent/60 mb-2 block">
-                    {client.number}
-                  </span>
-                  <span className="text-sm lg:text-base font-medium text-foreground">
-                    {client.label}
-                  </span>
+          {/* Clients Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {clients.map((client, index) => (
+              <div
+                key={client.name}
+                className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 text-center"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="text-lg font-bold text-primary-foreground group-hover:text-accent transition-colors">
+                  {client.name}
                 </div>
+                <div className="text-sm text-primary-foreground/50 mt-1">
+                  {client.industry}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Testimonial */}
+          <div className="mt-16 max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-accent text-accent" />
               ))}
+            </div>
+            <blockquote className="text-xl md:text-2xl font-medium text-primary-foreground/90 leading-relaxed mb-6">
+              "ZUNO transformed our marketing approach completely. Their strategic insight and automation expertise helped us achieve 3x growth in just 6 months."
+            </blockquote>
+            <div>
+              <div className="font-semibold text-primary-foreground">Sarah Chen</div>
+              <div className="text-sm text-primary-foreground/60">CEO, TechFlow Inc.</div>
             </div>
           </div>
         </div>
