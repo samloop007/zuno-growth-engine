@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import zunoLogo from "@/assets/zuno-logo.png";
 import { ArrowUpRight, Mail, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -13,10 +14,7 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-3xl font-bold tracking-tight">
-                  ZUNO
-                </span>
-                <span className="text-sm opacity-60 font-medium">by Perch</span>
+                <img src={zunoLogo} alt="ZUNO Logo" className="h-16 w-auto object-contain bg-white/10 rounded-lg p-2 backdrop-blur-sm" />
               </div>
               <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-8 text-lg">
                 A strategy-driven marketing and automation agency helping brands

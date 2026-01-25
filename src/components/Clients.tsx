@@ -1,12 +1,22 @@
 import { Star } from "lucide-react";
+import brandOne from "@/assets/brand -one.png";
+import brandTwo from "@/assets/bran-two.png";
+import brandThree from "@/assets/brand-three.png";
+import brandFour from "@/assets/brand-four.png";
+import brandFive from "@/assets/brand-five.png";
+import brandSix from "@/assets/brand-six.png";
+import brandSeven from "@/assets/brand-seven.png";
+import brandEight from "@/assets/brand-eight.png";
 
 const clients = [
-  { name: "TechFlow", industry: "SaaS" },
-  { name: "GreenLeaf", industry: "E-Commerce" },
-  { name: "CloudBase", industry: "Tech" },
-  { name: "FinanceHub", industry: "Fintech" },
-  { name: "MediaPro", industry: "Media" },
-  { name: "DataSync", industry: "Analytics" },
+  { name: "Brand One", industry: "Partner", logo: brandOne },
+  { name: "Brand Two", industry: "Partner", logo: brandTwo },
+  { name: "Brand Three", industry: "Partner", logo: brandThree },
+  { name: "Brand Four", industry: "Partner", logo: brandFour },
+  { name: "Brand Five", industry: "Partner", logo: brandFive },
+  { name: "Brand Six", industry: "Partner", logo: brandSix },
+  { name: "Brand Seven", industry: "Partner", logo: brandSeven },
+  { name: "Brand Eight", industry: "Partner", logo: brandEight },
 ];
 
 const Clients = () => {
@@ -15,7 +25,7 @@ const Clients = () => {
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-foreground/10 to-transparent" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      
+
       <div className="section-padding">
         <div className="container-wide">
           {/* Header */}
@@ -33,19 +43,29 @@ const Clients = () => {
           </div>
 
           {/* Clients Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {clients.map((client, index) => (
               <div
                 key={client.name}
-                className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 text-center"
+                className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[120px]"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="text-lg font-bold text-primary-foreground group-hover:text-accent transition-colors">
-                  {client.name}
-                </div>
-                <div className="text-sm text-primary-foreground/50 mt-1">
-                  {client.industry}
-                </div>
+                {client.logo ? (
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-16 w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
+                  />
+                ) : (
+                  <>
+                    <div className="text-lg font-bold text-primary-foreground group-hover:text-accent transition-colors">
+                      {client.name}
+                    </div>
+                    <div className="text-sm text-primary-foreground/50 mt-1">
+                      {client.industry}
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>

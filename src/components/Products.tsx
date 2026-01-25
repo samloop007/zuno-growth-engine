@@ -15,7 +15,7 @@ const Products = () => {
     <section className="section-spacing bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
+
       <div className="section-padding">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -24,7 +24,7 @@ const Products = () => {
               <div className="relative rounded-3xl overflow-hidden group">
                 {/* Decorative elements */}
                 <div className="absolute -inset-4 border-2 border-dashed border-accent/20 rounded-[2rem] rotate-2" />
-                
+
                 <div className="relative aspect-[4/3] bg-secondary rounded-2xl overflow-hidden">
                   <img
                     src={productsImage}
@@ -35,18 +35,7 @@ const Products = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
                 </div>
 
-                {/* Floating card */}
-                <div className="absolute -bottom-6 -right-6 bg-card p-4 rounded-2xl shadow-xl border border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                      <Check className="w-6 h-6 text-accent" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-foreground">500+</div>
-                      <div className="text-sm text-muted-foreground">Automations Active</div>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -56,12 +45,12 @@ const Products = () => {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium">
                   Our Products
                 </span>
-                
+
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
                   Powerful marketing
                   <span className="text-accent"> automation</span> solutions
                 </h2>
-                
+
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We build marketing-automation solutions that help businesses scale efficiently. Our products simplify complex processes and deliver measurable results.
                 </p>
@@ -80,8 +69,8 @@ const Products = () => {
               </ul>
 
               <Link to="/services" className="inline-block">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="group text-base px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg shadow-accent/25"
                 >
                   Explore Products

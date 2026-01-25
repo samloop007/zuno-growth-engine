@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
+import zunoLogo from "@/assets/zuno-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,20 +29,15 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border py-3"
-          : "bg-transparent py-5"
+        ? "bg-background/80 backdrop-blur-xl border-b border-border py-3"
+        : "bg-transparent py-5"
         }`}
     >
       <div className="section-padding">
         <nav className="container-wide flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-2xl font-bold tracking-tight text-foreground">
-              ZUNO
-            </span>
-            <span className="text-sm text-muted-foreground font-medium">
-              by Perch
-            </span>
+            <img src={zunoLogo} alt="ZUNO Logo" className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,8 +47,8 @@ const Header = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-colors duration-300 relative ${isActive(link.path)
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {link.name}
@@ -98,8 +94,8 @@ const Header = () => {
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`text-lg font-medium py-3 px-4 rounded-xl transition-colors ${isActive(link.path)
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:bg-secondary"
+                    ? "text-accent bg-accent/10"
+                    : "text-muted-foreground hover:bg-secondary"
                     }`}
                 >
                   {link.name}
