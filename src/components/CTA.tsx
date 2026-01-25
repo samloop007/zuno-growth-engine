@@ -18,53 +18,48 @@ const CTA = ({
 
   return (
     <section
-      className={`section-spacing relative overflow-hidden ${
-        isDark ? "bg-primary text-primary-foreground" : "bg-accent/5"
-      }`}
+      className={`section-spacing relative overflow-hidden ${isDark ? "bg-primary text-primary-foreground" : "bg-accent/5"
+        }`}
     >
       {/* Background decoration */}
-      <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl ${
-        isDark ? "bg-accent/20" : "bg-accent/10"
-      }`} />
-      <div className={`absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl ${
-        isDark ? "bg-accent/10" : "bg-primary/5"
-      }`} />
-      
+      <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl ${isDark ? "bg-accent/20" : "bg-accent/10"
+        }`} />
+      <div className={`absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl ${isDark ? "bg-accent/10" : "bg-primary/5"
+        }`} />
+
       <div className="section-padding relative z-10">
         <div className="container-narrow text-center">
           {/* Icon */}
-          <div className={`w-16 h-16 rounded-2xl mx-auto mb-8 flex items-center justify-center ${
-            isDark ? "bg-accent/20" : "bg-accent/10"
-          }`}>
+          <div className={`w-16 h-16 rounded-2xl mx-auto mb-8 flex items-center justify-center ${isDark ? "bg-accent/20" : "bg-accent/10"
+            }`}>
             <Mail className="w-8 h-8 text-accent" />
           </div>
 
           {/* Content */}
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 ${
-            isDark ? "text-primary-foreground" : "text-foreground"
-          }`}>
+          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 ${isDark ? "text-primary-foreground" : "text-foreground"
+            }`}>
             {headline}
           </h2>
-          
-          <p className={`text-lg max-w-xl mx-auto mb-10 ${
-            isDark ? "text-primary-foreground/70" : "text-muted-foreground"
-          }`}>
+
+          <p className={`text-lg max-w-xl mx-auto mb-10 ${isDark ? "text-primary-foreground/70" : "text-muted-foreground"
+            }`}>
             {description}
           </p>
 
           {/* CTA Button */}
-          <Button
-            size="lg"
-            className="group text-base px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
-          >
-            {buttonText}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <a href="https://wa.me/923180527326" target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              className="group text-base px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
+            >
+              {buttonText}
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </a>
 
           {/* Trust badge */}
-          <p className={`mt-8 text-sm ${
-            isDark ? "text-primary-foreground/50" : "text-muted-foreground"
-          }`}>
+          <p className={`mt-8 text-sm ${isDark ? "text-primary-foreground/50" : "text-muted-foreground"
+            }`}>
             No commitment required • Free 30-minute consultation
           </p>
         </div>

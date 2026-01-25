@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import zunoLogo from "@/assets/zuno-logo.png";
-import { ArrowUpRight, Mail, Linkedin, Twitter } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,6 +29,20 @@ const Footer = () => {
                 <span className="font-medium">hello@zunobyperch.com</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
+              <a
+                href="https://wa.me/923180527326"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-primary-foreground/10 hover:bg-accent/20 hover:text-accent transition-all duration-300 group mt-4 w-max"
+              >
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.766 0 1.025.267 2.016.776 2.89L6.172 17.828l3.149-.826c.828.452 1.761.692 2.71.692 3.181 0 5.767-2.586 5.767-5.767s-2.586-5.766-5.767-5.766zM12 16.406c-.846 0-1.636-.246-2.326-.711l-.167-.11-2.071.543.553-2.019-.11-.173C7.456 13.268 7.234 12.659 7.234 12c0-2.628 2.138-4.766 4.766-4.766 2.628 0 4.766 2.138 4.766 4.766S14.628 16.406 12 16.406z" />
+                  </svg>
+                </div>
+                <span className="font-medium">+92 318 0527326</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </div>
 
             {/* Navigation */}
@@ -50,7 +64,7 @@ const Footer = () => {
                     to="/services"
                     className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
                   >
-                    Services
+                    Products
                   </Link>
                 </li>
                 <li>
@@ -71,18 +85,31 @@ const Footer = () => {
               </h4>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/zuno-by-perch/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/zunobyperch"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
                   aria-label="Twitter"
                 >
                   <Twitter className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/zunobyperch/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>

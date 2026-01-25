@@ -45,13 +45,15 @@ const Hero = () => {
 
           {/* Call To Action */}
           <div className="pt-8 animate-in fade-in slide-in-from-bottom-5 duration-700 delay-700">
-            <Button
-              size="lg"
-              className="group bg-white text-black hover:bg-gray-200 text-lg px-10 py-7 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-            >
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="https://wa.me/923180527326" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="group bg-white text-black hover:bg-gray-200 text-lg px-10 py-7 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

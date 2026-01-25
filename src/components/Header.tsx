@@ -20,7 +20,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: "Products", path: "/services" },
     { name: "About", path: "/about" },
   ];
 
@@ -62,12 +62,14 @@ const Header = () => {
           {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <ModeToggle />
-            <Button
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6"
-            >
-              Book a Call
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="https://wa.me/923180527326" target="_blank" rel="noopener noreferrer">
+              <Button
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6"
+              >
+                Book a Call
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -101,12 +103,14 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button
-                className="mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full py-6"
-              >
-                Book a Call
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="https://wa.me/923180527326" target="_blank" rel="noopener noreferrer" className="mt-4 w-full">
+                <Button
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full py-6"
+                >
+                  Book a Call
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
               <div className="mt-4 flex justify-center">
                 <ModeToggle />
               </div>
