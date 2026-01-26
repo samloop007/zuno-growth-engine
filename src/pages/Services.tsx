@@ -108,18 +108,18 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-40 pb-20 md:pt-48 md:pb-28">
-        <div className="section-padding">
+      <section className="pt-32 pb-12 md:pt-48 md:pb-20">
+        <div className="section-padding px-4">
           <div className="container-narrow text-center">
-            <p className="text-sm font-medium tracking-widest uppercase text-accent mb-6 opacity-0 animate-fade-up">
+            <p className="text-xs md:text-sm font-medium tracking-widest uppercase text-accent mb-4 md:mb-6 opacity-0 animate-fade-up">
               Our Products
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-8 opacity-0 animate-fade-up stagger-1">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-8 opacity-0 animate-fade-up stagger-1 leading-tight">
               AI-Powered Tools to
               <br />
               <span className="text-accent">Explode Your Growth</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-up stagger-2">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-up stagger-2 leading-relaxed">
               Automate your content, engagement, and analytics with our suite of intelligent tools.
             </p>
           </div>
@@ -127,61 +127,57 @@ const Services = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="section-spacing bg-secondary/30">
-        <div className="section-padding">
-          <div className="container-wide">
-            <div className="space-y-8">
+      <section className="py-12 md:py-20 bg-secondary/30">
+        <div className="px-4 md:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {products.map((product, index) => (
                 <div
                   key={product.title}
-                  className="group bg-background p-8 md:p-12 border border-border hover:border-accent/30 transition-all duration-500 rounded-3xl"
+                  className="group bg-background p-5 sm:p-6 md:p-8 border border-border hover:border-accent/50 active:border-accent/70 hover:shadow-xl transition-all duration-500 rounded-xl md:rounded-2xl flex flex-col h-full"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                    {/* Left - Icon & Title */}
-                    <div className="lg:col-span-5">
-                      <div className="flex items-start gap-6">
-                        <div className="w-14 h-14 flex items-center justify-center bg-accent/10 text-accent flex-shrink-0 transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground rounded-2xl">
-                          <product.icon className="h-7 w-7" />
-                        </div>
-                        <div>
-                          <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
-                            {product.title}
-                          </h3>
-                          <p className="text-accent font-medium mb-4">{product.subtitle}</p>
-                          <div className="text-2xl font-bold">{product.price}</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right - Description & Features */}
-                    <div className="lg:col-span-7">
-                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                        {product.description}
-                      </p>
-
-                      <div className="mb-8">
-                        <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">What it gives you:</h4>
-                        <p className="text-foreground text-lg font-medium">{product.benefit}</p>
-                      </div>
-
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                        {product.features.map((feature) => (
-                          <li
-                            key={feature}
-                            className="flex items-center gap-3 text-sm text-muted-foreground"
-                          >
-                            <ArrowRight className="h-4 w-4 text-accent flex-shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
-                        Order Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
+                  {/* Icon */}
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-accent/10 text-accent flex-shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:text-accent-foreground group-hover:scale-110 active:scale-105 rounded-xl md:rounded-2xl mb-4 sm:mb-6">
+                    <product.icon className="h-7 w-7 sm:h-8 sm:w-8" />
                   </div>
+
+                  {/* Title & Subtitle */}
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-2 leading-tight">
+                    {product.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-accent font-medium mb-3 sm:mb-4 line-clamp-2">{product.subtitle}</p>
+
+                  {/* Price */}
+                  <div className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">{product.price}</div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    {product.description}
+                  </p>
+
+                  {/* Benefit */}
+                  <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-accent/5 rounded-lg md:rounded-xl border border-accent/20">
+                    <p className="text-foreground text-xs sm:text-sm font-medium leading-snug">{product.benefit}</p>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
+                    {product.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-[11px] sm:text-xs text-muted-foreground leading-snug"
+                      >
+                        <ArrowRight className="h-3 w-3 text-accent flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <Button className="w-full min-h-[44px] text-sm sm:text-base bg-accent hover:bg-accent/90 active:bg-accent/80 text-accent-foreground group-hover:shadow-lg transition-all duration-300">
+                    Order Now
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               ))}
             </div>
