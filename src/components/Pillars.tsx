@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import zunoUncle from "@/assets/zuno-uncle.png";
 import bajiZuno from "@/assets/baji-zuno.jpg";
-import bhaiZuno from "@/assets/bhai-zuno.png";
+import bhaiZuno from "@/assets/bhai-zuno-new.png";
 
 const pillars = [
   {
