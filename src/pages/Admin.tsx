@@ -5,14 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { getSiteData, saveSiteData, SiteData, Brand, Project } from "@/lib/store";
-import { Plus, Trash2, Save, ShoppingBag, Users, Zap } from "lucide-react";
+import { getSiteData, saveSiteData, SiteData, Project } from "@/lib/store";
+import { Plus, Trash2, Save, ShoppingBag, Zap } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
 
 const Admin = () => {
     const [data, setData] = useState<SiteData>(getSiteData());
-    const [newBrand, setNewBrand] = useState<Partial<Brand>>({});
     const [newProject, setNewProject] = useState<Partial<Project>>({ features: [] });
     const [newFeature, setNewFeature] = useState("");
 
@@ -21,23 +20,6 @@ const Admin = () => {
         toast.success("Settings saved successfully!");
     };
 
-    const addBrand = () => {
-        if (!newBrand.logo) return;
-        const brand: Brand = {
-            id: Date.now().toString(),
-            name: newBrand.name || "Brand",
-            industry: newBrand.industry || "Partner",
-            logo: newBrand.logo,
-        };
-        setData({ ...data, brands: [...data.brands, brand] });
-        setNewBrand({});
-        toast.success("Image added to gallery");
-    };
-
-    const removeBrand = (id: string) => {
-        setData({ ...data, brands: data.brands.filter((b) => b.id !== id) });
-        toast.error("Brand removed");
-    };
 
     const addProject = () => {
         if (!newProject.title) return;
@@ -76,7 +58,6 @@ const Admin = () => {
                 <Tabs defaultValue="general" className="space-y-8">
                     <TabsList className="bg-secondary p-1">
                         <TabsTrigger value="general">General</TabsTrigger>
-                        <TabsTrigger value="brands">Brands</TabsTrigger>
                         <TabsTrigger value="projects">Projects</TabsTrigger>
                     </TabsList>
 
@@ -100,77 +81,6 @@ const Admin = () => {
                                 </div>
                             </CardContent>
                         </Card>
-                    </TabsContent>
-
-                    <TabsContent value="brands">
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2">
-                                        <Plus className="text-accent" />
-                                        Add New Brand
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium">Upload Brand Logo / Image</label>
-                                        <div className="flex flex-col gap-4">
-                                            {newBrand.logo && (
-                                                <div className="relative w-full h-48 bg-secondary rounded-lg flex items-center justify-center p-4 border border-dashed border-accent/40">
-                                                    <img src={newBrand.logo} alt="Preview" className="max-h-full object-contain" />
-                                                </div>
-                                            )}
-                                            <Input
-                                                type="file"
-                                                accept="image/*"
-                                                onChange={(e) => {
-                                                    const file = e.target.files?.[0];
-                                                    if (file) {
-                                                        const reader = new FileReader();
-                                                        reader.onloadend = () => {
-                                                            setNewBrand({ ...newBrand, logo: reader.result as string });
-                                                        };
-                                                        reader.readAsDataURL(file);
-                                                    }
-                                                }}
-                                                className="cursor-pointer"
-                                            />
-                                        </div>
-                                    </div>
-                                    <Button onClick={addBrand} className="w-full bg-accent hover:bg-accent/90" disabled={!newBrand.logo}>
-                                        <Plus size={18} className="mr-2" />
-                                        Add to Gallery
-                                    </Button>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2">
-                                        <Users className="text-accent" />
-                                        Brand Gallery
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="grid grid-cols-2 gap-4">
-                                        {data.brands.map(brand => (
-                                            <div key={brand.id} className="group relative aspect-video bg-secondary rounded-lg overflow-hidden border border-border flex items-center justify-center p-2">
-                                                {brand.logo ? (
-                                                    <img src={brand.logo} alt="" className="max-h-full object-contain" />
-                                                ) : (
-                                                    <span className="text-xs text-muted-foreground">{brand.name}</span>
-                                                )}
-                                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                    <Button variant="destructive" size="icon" onClick={() => removeBrand(brand.id)}>
-                                                        <Trash2 size={16} />
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
                     </TabsContent>
 
                     <TabsContent value="projects">

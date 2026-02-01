@@ -20,8 +20,10 @@ const VideoHero = ({ titles, subtitle, videoSrc = heroVideo, posterSrc = heroPos
                     loop
                     muted
                     playsInline
+                    webkit-playsinline="true"
+                    controls={false}
                     poster={posterSrc}
-                    className="object-cover w-full h-full opacity-60"
+                    className="object-cover w-full h-full opacity-60 pointer-events-none"
                 >
                     <source src={videoSrc} type="video/mp4" />
                 </video>
