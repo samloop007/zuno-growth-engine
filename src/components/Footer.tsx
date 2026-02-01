@@ -61,6 +61,22 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
+                    to="/investment"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
+                  >
+                    Investment
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/strategy"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
+                  >
+                    Strategy
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/services"
                     className="text-primary-foreground/70 hover:text-accent transition-colors inline-flex items-center gap-1"
                   >

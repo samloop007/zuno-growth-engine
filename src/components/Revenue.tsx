@@ -33,12 +33,7 @@ const Revenue = () => {
                         {revenue}
                     </div>
 
-                    <p className="max-w-2xl text-lg md:text-xl opacity-80 leading-relaxed font-light">
-                        Our data-driven growth engine combines strategic precision with creative excellence
-                        to deliver results that move the needle.
-                    </p>
 
-                    <div className="h-1 w-24 bg-white/30 rounded-full" />
                 </div>
             </div>
         </section>
