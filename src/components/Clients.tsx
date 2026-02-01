@@ -1,19 +1,17 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
-import { getSiteData } from "@/lib/store";
+import brand1 from "@/assets/brand -one.png";
+import brand2 from "@/assets/bran-two.png";
+import brand3 from "@/assets/brand-three.png";
+import brand4 from "@/assets/brand-four.png";
+import brand5 from "@/assets/brand-five.png";
+import brand6 from "@/assets/brand-six.png";
+import brand7 from "@/assets/brand-seven.png";
+import brand8 from "@/assets/brand-eight.png";
+
+const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8];
 
 const Clients = () => {
-  const [clients, setClients] = useState(getSiteData().brands);
-
-  useEffect(() => {
-    const handleUpdate = () => {
-      setClients(getSiteData().brands);
-    };
-    window.addEventListener("siteDataUpdated", handleUpdate);
-    return () => window.removeEventListener("siteDataUpdated", handleUpdate);
-  }, []);
-
   return (
     <section className="section-spacing bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background decoration */}
@@ -37,29 +35,19 @@ const Clients = () => {
           </div>
 
           {/* Clients Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {clients.map((client, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {brands.map((logo, index) => (
               <div
-                key={client.id}
-                className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[120px]"
+                key={index}
+                className="group p-8 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 flex items-center justify-center aspect-[3/2]"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                {client.logo ? (
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-16 w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
-                  />
-                ) : (
-                  <>
-                    <div className="text-lg font-bold text-primary-foreground group-hover:text-accent transition-colors">
-                      {client.name}
-                    </div>
-                    <div className="text-sm text-primary-foreground/50 mt-1">
-                      {client.industry}
-                    </div>
-                  </>
-                )}
+                <img
+                  src={logo}
+                  alt={`Brand Partner ${index + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                />
               </div>
             ))}
           </div>
