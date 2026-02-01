@@ -19,11 +19,13 @@ export interface SiteData {
   projects: Project[];
 }
 
+import brandLogoNew from "@/assets/brand-logo-new.png";
+
 const DEFAULT_DATA: SiteData = {
   revenue: "50M PKR",
   brands: [
-    { id: "1", name: "Brand One", industry: "Partner", logo: "" },
-    { id: "2", name: "Brand Two", industry: "Partner", logo: "" },
+    { id: "1", name: "Partner Brand", industry: "Real Estate", logo: brandLogoNew },
+    { id: "2", name: "Partner Brand", industry: "Technology", logo: brandLogoNew }, // Using same for now as placeholder if user only gave one
   ],
   projects: [
     {
