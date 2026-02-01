@@ -22,11 +22,11 @@ const Footer = () => {
                 confidence.
               </p>
               <a
-                href="mailto:hello@zunobyperch.com"
+                href="mailto:connect@zunobyperch.com"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-primary-foreground/10 hover:bg-accent/20 hover:text-accent transition-all duration-300 group"
               >
                 <Mail className="h-5 w-5" />
-                <span className="font-medium">hello@zunobyperch.com</span>
+                <span className="font-medium">connect@zunobyperch.com</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
@@ -110,6 +110,22 @@ const Footer = () => {
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://tiktok.com/@zunobyperch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-300 flex items-center justify-center"
+                  aria-label="TikTok"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+                  </svg>
                 </a>
               </div>
             </div>

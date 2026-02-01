@@ -1,5 +1,8 @@
 import Layout from "@/components/Layout";
+import VideoHero from "@/components/VideoHero";
+import aboutVideo from "@/assets/UNCLE VIDEO.mp4";
 import CTA from "@/components/CTA";
+import SEO from "@/components/SEO";
 import { Database, Layers, TrendingUp } from "lucide-react";
 
 const principles = [
@@ -26,36 +29,15 @@ const principles = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-40 pb-20 md:pt-48 md:pb-28">
-        <div className="section-padding">
-          <div className="container-wide">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
-              {/* Left - Main Content */}
-              <div>
-                <p className="text-sm font-medium tracking-widest uppercase text-accent mb-6 opacity-0 animate-fade-up">
-                  About Us
-                </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] opacity-0 animate-fade-up stagger-1">
-                  Built for
-                  <br />
-                  <span className="text-accent">long-term growth.</span>
-                </h1>
-              </div>
-
-              {/* Right - Supporting Text */}
-              <div className="opacity-0 animate-fade-up stagger-2">
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  ZUNO by Perch helps businesses remove guesswork and scale
-                  intelligently. We design systems that elevate brands, optimize
-                  customer journeys, and turn operations into high-performing,
-                  scalable engines.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SEO
+        title="About Us"
+        description="ZUNO by Perch - Our mission, story, and principles for building scalable businesses."
+      />
+      <VideoHero
+        titles={["Who We Are.", "Built for", "Long-term Growth."]}
+        subtitle="ZUNO by Perch helps businesses remove guesswork and scale intelligently. We design systems that elevate brands, optimize customer journeys, and turn operations into high-performing, scalable engines."
+        videoSrc={aboutVideo}
+      />
 
       {/* Mission Section */}
       <section className="section-spacing bg-secondary/30">

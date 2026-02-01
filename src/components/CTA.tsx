@@ -47,7 +47,10 @@ const CTA = ({
           </p>
 
           {/* CTA Button */}
-          <a href="https://wa.me/923180527326" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:connect@zunobyperch.com?subject=Booking a Strategy Call&body=Hello ZUNO Team,%0A%0AI would like to book a strategy call to discover how ZUNO can transform my marketing.%0A%0AMy Details:%0A- Name: %0A- Company: %0A- Interested in: %0A%0ABest regards,"
+            className="inline-block"
+          >
             <Button
               size="lg"
               className="group text-base px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
@@ -58,7 +61,7 @@ const CTA = ({
           </a>
 
           {/* Trust badge */}
-          <p className={`mt-8 text-sm ${isDark ? "text-primary-foreground/50" : "text-muted-foreground"
+          <p className={`mt-8 text-sm font-medium ${isDark ? "text-primary-foreground/60" : "text-muted-foreground"
             }`}>
             No commitment required • Free 30-minute consultation
           </p>

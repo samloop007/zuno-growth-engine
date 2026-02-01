@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import zunoUncle from "@/assets/zuno-uncle.png";
 import bajiZuno from "@/assets/baji-zuno.jpg";
 import bhaiZuno from "@/assets/bhai-zuno-new.png";
@@ -11,6 +12,7 @@ const pillars = [
     description:
       "Data-driven decisions and investment intelligence that provides clarity for sustainable, measurable growth.",
     number: "01",
+    link: "/investment",
   },
   {
     image: bajiZuno,
@@ -19,6 +21,7 @@ const pillars = [
     description:
       "Brand positioning and messaging that resonates deeply with your audience and builds lasting trust.",
     number: "02",
+    link: "/strategy",
   },
   {
     image: bhaiZuno,
@@ -27,6 +30,7 @@ const pillars = [
     description:
       "Smart automation systems that convert and scale, transforming operations into growth engines.",
     number: "03",
+    link: "/services",
   },
 ];
 
@@ -36,7 +40,7 @@ const Pillars = () => {
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="absolute top-20 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
+
       <div className="section-padding">
         <div className="container-wide">
           {/* Section Header */}
@@ -58,9 +62,10 @@ const Pillars = () => {
           {/* Pillars Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((pillar, index) => (
-              <div
+              <Link
+                to={pillar.link}
                 key={pillar.title}
-                className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-2"
+                className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-2 block"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Image */}
@@ -71,7 +76,7 @@ const Pillars = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                  
+
                   {/* Number badge */}
                   <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center text-sm font-bold text-accent">
                     {pillar.number}
@@ -89,14 +94,14 @@ const Pillars = () => {
                   <p className="text-muted-foreground leading-relaxed">
                     {pillar.description}
                   </p>
-                  
+
                   {/* Learn more link */}
                   <div className="mt-6 flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-accent transition-colors">
                     <span>Learn more</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

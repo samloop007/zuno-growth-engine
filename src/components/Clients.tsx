@@ -1,25 +1,19 @@
-import { Star } from "lucide-react";
-import brandOne from "@/assets/brand -one.png";
-import brandTwo from "@/assets/bran-two.png";
-import brandThree from "@/assets/brand-three.png";
-import brandFour from "@/assets/brand-four.png";
-import brandFive from "@/assets/brand-five.png";
-import brandSix from "@/assets/brand-six.png";
-import brandSeven from "@/assets/brand-seven.png";
-import brandEight from "@/assets/brand-eight.png";
-
-const clients = [
-  { name: "Brand One", industry: "Partner", logo: brandOne },
-  { name: "Brand Two", industry: "Partner", logo: brandTwo },
-  { name: "Brand Three", industry: "Partner", logo: brandThree },
-  { name: "Brand Four", industry: "Partner", logo: brandFour },
-  { name: "Brand Five", industry: "Partner", logo: brandFive },
-  { name: "Brand Six", industry: "Partner", logo: brandSix },
-  { name: "Brand Seven", industry: "Partner", logo: brandSeven },
-  { name: "Brand Eight", industry: "Partner", logo: brandEight },
-];
+import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { getSiteData } from "@/lib/store";
 
 const Clients = () => {
+  const [clients, setClients] = useState(getSiteData().brands);
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setClients(getSiteData().brands);
+    };
+    window.addEventListener("siteDataUpdated", handleUpdate);
+    return () => window.removeEventListener("siteDataUpdated", handleUpdate);
+  }, []);
+
   return (
     <section className="section-spacing bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background decoration */}
@@ -46,7 +40,7 @@ const Clients = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {clients.map((client, index) => (
               <div
-                key={client.name}
+                key={client.id}
                 className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[120px]"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -71,19 +65,17 @@ const Clients = () => {
           </div>
 
           {/* Testimonial */}
+          {/* Testimonial Replacement - CTA */}
           <div className="mt-16 max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-              ))}
-            </div>
-            <blockquote className="text-xl md:text-2xl font-medium text-primary-foreground/90 leading-relaxed mb-6">
-              "ZUNO transformed our marketing approach completely. Their strategic insight and automation expertise helped us achieve 3x growth in just 6 months."
-            </blockquote>
-            <div>
-              <div className="font-semibold text-primary-foreground">Sarah Chen</div>
-              <div className="text-sm text-primary-foreground/60">CEO, TechFlow Inc.</div>
-            </div>
+            <a
+              href="mailto:connect@zunobyperch.com"
+              className="inline-block"
+            >
+              <Button size="lg" className="bg-accent text-primary font-bold hover:bg-white transition-all duration-300 rounded-full px-8 py-6 text-lg group">
+                Become a Partner
+                <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

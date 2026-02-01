@@ -28,7 +28,7 @@ const ValueStatement = () => {
     <section className="section-spacing bg-secondary/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      
+
       <div className="section-padding">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -43,7 +43,7 @@ const ValueStatement = () => {
                   <span className="text-accent"> not campaigns</span>
                 </h2>
               </div>
-              
+
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Most agencies focus on quick wins. We focus on building the infrastructure that makes those wins repeatable and scalable. Our approach combines strategic thinking with technical execution.
               </p>
@@ -59,8 +59,8 @@ const ValueStatement = () => {
                   <div className="text-sm text-muted-foreground mt-1">Brands Scaled</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-accent">$50M+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Revenue Generated</div>
+                  <div className="text-3xl md:text-4xl font-bold text-accent">50M PKR</div>
+                  <div className="text-sm text-muted-foreground mt-1">Invested by Client</div>
                 </div>
               </div>
             </div>
