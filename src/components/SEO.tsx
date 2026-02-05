@@ -11,7 +11,8 @@ const SEO = ({ title, description, canonical, image }: SEOProps) => {
     const siteTitle = "ZUNO Growth Engine";
     const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     const defaultDescription = "ZUNO by Perch - Strategy, Automation, and Investment engines for sustainable business growth.";
-    const siteUrl = "https://zuno.com"; // TODO: Update with real URL if available
+    const siteUrl = "https://www.zunobyperch.com";
+    const defaultImage = `${siteUrl}/zuno-logo.png`;
 
     return (
         <Helmet>
@@ -24,13 +25,13 @@ const SEO = ({ title, description, canonical, image }: SEOProps) => {
             <meta property="og:type" content="website" />
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description || defaultDescription} />
-            {image && <meta property="og:image" content={image} />}
+            <meta property="og:image" content={image || defaultImage} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={description || defaultDescription} />
-            {image && <meta name="twitter:image" content={image} />}
+            <meta name="twitter:image" content={image || defaultImage} />
         </Helmet>
     );
 };
